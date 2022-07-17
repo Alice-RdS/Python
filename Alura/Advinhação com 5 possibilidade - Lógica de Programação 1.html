@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button> // Cria botão para iniciar o programa
+
+<script>
+
+    var segredos = [5,7,10,2,3];
+
+    var input = document.querySelector("input");
+        input.focus();
+
+    function verifica() {
+
+        var achou = false;
+
+        for(var posicao = 0; posicao < segredos.length; posicao++) { // Array sempre inicia na posição 0; o for vai procurar até uma posição antes do tamanho do array; o for vai somar 1 na posição ao girar
+
+            if(input.value == segredos[posicao]) { // Se o valor digitado for igual ao segredo desta posição falará que acertou, caso negativo vai para a próxima posição
+
+                alert("Você ACERTOU!");
+                achou = true;
+                break; // Para o For
+            }
+        }
+
+        if(achou == false) {  // Se o valor digitado não for igual ao segredo de alguma posição falará que errou
+            alert("Você ERROU!");
+        }
+
+    input.value = ""; // Limpa box
+    input.focus(); // Foco no box ao terminar
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica; // Ao clicar no botão inicia a função Verifica
+
+</script>
