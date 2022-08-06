@@ -7,6 +7,28 @@ def jogar():
     print(letras_encontradas)
     play(palavra_secreta, letras_encontradas)
 
+def apresenta():
+    print("*********************************")
+    print("***Bem vindo ao jogo da Forca!***")
+    print("*********************************")
+
+def configura():
+    arquivo = open("frutas.txt", "r")
+    frutas = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        frutas.append(linha)
+
+    arquivo.close()
+
+    numero = random.randrange(0,len(frutas))
+    palavra_secreta = frutas[numero]
+    return palavra_secreta
+
+def fruta(palavra_secreta):
+    return ["_" for letra in palavra_secreta]
+
 def play(palavra_secreta, letras_encontradas):
 
     enforcou = False
@@ -42,28 +64,6 @@ def play(palavra_secreta, letras_encontradas):
             enforcou = chances == 6
             if(enforcou):
                 print("Você foi enforcado! A fruta era {}!" .format(palavra_secreta))
-
-def apresenta():
-    print("*********************************")
-    print("***Bem vindo ao jogo da Forca!***")
-    print("*********************************")
-
-def configura():
-    arquivo = open("frutas.txt", "r")
-    frutas = []
-
-    for linha in arquivo:
-        linha = linha.strip()
-        frutas.append(linha)
-
-    arquivo.close()
-
-    numero = random.randrange(0,len(frutas))
-    palavra_secreta = frutas[numero]
-    return palavra_secreta
-
-def fruta(palavra_secreta):
-    return ["_" for letra in palavra_secreta]
 
 if(__name__ == "__main__"):
     jogar()
