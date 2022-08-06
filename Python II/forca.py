@@ -13,7 +13,7 @@ def apresenta():
     print("*********************************")
 
 def configura():
-    arquivo = open("frutas.txt", "r")
+    arquivo = open("frutas2.txt", "r")
     frutas = []
 
     for linha in arquivo:
