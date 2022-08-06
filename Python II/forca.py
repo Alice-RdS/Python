@@ -1,30 +1,17 @@
 import random
 
 def jogar():
-    print("*********************************")
-    print("***Bem vindo ao jogo da Forca!***")
-    print("*********************************")
+    apresenta()
+    palavra_secreta = configura()
+    letras_encontradas = fruta(palavra_secreta)
+    print(letras_encontradas)
+    play(palavra_secreta, letras_encontradas)
 
-    arquivo = open("frutas.txt", "r")
-    frutas = []
-
-    for linha in arquivo:
-        linha = linha.strip()
-        frutas.append(linha)
-
-    arquivo.close()
-
-    numero = random.randrange(0,len(frutas))
-
-    palavra_secreta = frutas[numero]
-
-    letras_encontradas = ["_" for letra in palavra_secreta]
+def play(palavra_secreta, letras_encontradas):
 
     enforcou = False
     acertou = False
     chances = 0
-
-    print(letras_encontradas)
 
     while (not enforcou and not acertou): #Enquanto a sentença for verdadeira, irá rodar o while
         chute = input("Qual a letra? ")
@@ -55,9 +42,28 @@ def jogar():
             enforcou = chances == 6
             if(enforcou):
                 print("Você foi enforcado! A fruta era {}!" .format(palavra_secreta))
-                break
 
+def apresenta():
+    print("*********************************")
+    print("***Bem vindo ao jogo da Forca!***")
+    print("*********************************")
 
+def configura():
+    arquivo = open("frutas.txt", "r")
+    frutas = []
+
+    for linha in arquivo:
+        linha = linha.strip()
+        frutas.append(linha)
+
+    arquivo.close()
+
+    numero = random.randrange(0,len(frutas))
+    palavra_secreta = frutas[numero]
+    return palavra_secreta
+
+def fruta(palavra_secreta):
+    return ["_" for letra in palavra_secreta]
 
 if(__name__ == "__main__"):
     jogar()
