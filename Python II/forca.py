@@ -54,7 +54,7 @@ def jogar():
             chances += 1
             enforcou = chances == 6
             if(enforcou):
-                print("Você foi enforcado!")
+                print("Você foi enforcado! A fruta era {}!" .format(palavra_secreta))
                 break
 
 
