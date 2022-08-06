@@ -3,6 +3,8 @@ def jogar():
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
+    arquivo = open("frutas.txt", "r")
+    arquivo = arquivo.strip[]
     palavra_secreta = "Iemanjá"
     letras_encontradas = ["_" for letra in palavra_secreta]
 
