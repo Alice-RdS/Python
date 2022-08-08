@@ -1,4 +1,4 @@
-#!C:\Users\Alice\Desktop\TI\GitHub\Alura\venv\Scripts\python.exe
+#!"C:\Users\Alice\Desktop\TI\GitHub\Python Entendendo a Orientação a Objetos\venv\Scripts\python.exe" -x
 # EASY-INSTALL-ENTRY-SCRIPT: 'pip==19.0.3','console_scripts','pip'
 __requires__ = 'pip==19.0.3'
 import re
