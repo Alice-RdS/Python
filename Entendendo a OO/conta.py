@@ -18,3 +18,7 @@ class ContaCorrente:
 
     def sacar(self, valor):
         self.__saldo -= valor
+
+    def transferir(self, valor, destino):
+        self.saca(valor)
+        destino.deposita(valor)
