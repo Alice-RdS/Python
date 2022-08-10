@@ -20,5 +20,5 @@ class ContaCorrente:
         self.__saldo -= valor
 
     def transferir(self, valor, destino):
-        self.saca(valor)
-        destino.deposita(valor)
+        self.sacar(valor)
+        destino.depositar(valor)
