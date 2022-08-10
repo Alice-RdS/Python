@@ -10,5 +10,11 @@ class ContaCorrente:
         self.saldo = saldo
         self.limite = limite
 
-    pass
+    def extrato(self):
+        print("{}, o seu saldo é {}".format(self.titular, self.saldo))
 
+    def depositar(self, valor):
+        self.saldo += valor
+
+    def sacar(self, valor):
+        self.saldo -= valor
