@@ -16,8 +16,15 @@ class ContaCorrente:
     def depositar(self, valor):
         self.__saldo += valor
 
+    def __pode_sacar(self, valor_saque):
+        valor_saque = self.__saldo + self.__limite
+        return valor_saque
+
     def sacar(self, valor):
-        self.__saldo -= valor
+        if(self.__pode_sacar(valor)):
+            self.__saldo -= valor
+        else:
+            print("Você não possui limite para este saque.")
 
     def transferir(self, valor, destino):
         self.sacar(valor)
@@ -38,3 +45,11 @@ class ContaCorrente:
     @limite.setter #executa set sem precisar do ()
     def limite(self, limite):
         self.__limite = limite
+
+    @staticmethod
+    def banco():
+        return "001"
+
+    @staticmethod
+    def cods_banco():
+        return {'BB':'001', 'Caixa':'104', 'Bradesco':'237'}
