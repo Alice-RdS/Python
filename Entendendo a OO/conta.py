@@ -23,13 +23,15 @@ class ContaCorrente:
         self.sacar(valor)
         destino.depositar(valor)
 
-    def get_saldo(self):
+    @property #executa get sem precisar do ()
+    def saldo(self):
         return self.__saldo
 
-    def get_titutar(self):
+    @property
+    def titutar(self):
         return self.__titular
 
-    @property #executa get sem precisar do ()
+    @property
     def limite(self):
         return self.__limite
 
