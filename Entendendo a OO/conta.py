@@ -34,5 +34,5 @@ class ContaCorrente:
         return self.__limite
 
     @nome.setter #executa set sem precisar do ()
-    def set_limite(self, limite):
+    def limite(self, limite):
         self.__limite = limite
