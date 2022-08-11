@@ -29,8 +29,10 @@ class ContaCorrente:
     def get_titutar(self):
         return self.__titular
 
-    def get_limite(self):
+    @property #executa get sem precisar do ()
+    def limite(self):
         return self.__limite
 
+    @nome.setter #executa set sem precisar do ()
     def set_limite(self, limite):
         self.__limite = limite

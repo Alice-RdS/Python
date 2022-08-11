@@ -2,9 +2,12 @@
 class Cliente:
 
     def __init__(self, nome):
-        self.nome = nome
+        self.__nome = nome
 
     @property #executa sem precisar do ()
-    def get_nome(self):
-        return self.nome.title()
+    def nome(self):
+        return self.__nome.title()
 
+    @nome.setter #executa sem precisar do ()
+    def nome(self):
+        self.__nome = none
