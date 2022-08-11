@@ -9,5 +9,5 @@ class Cliente:
         return self.__nome.title()
 
     @nome.setter #executa sem precisar do ()
-    def nome(self):
+    def nome(self, nome):
         self.__nome = none
